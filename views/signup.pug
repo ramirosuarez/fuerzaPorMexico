@@ -1,0 +1,23 @@
+extends layout/layout.pug
+block content
+  
+  
+  .row.block(styl="background-color:red" )
+    .col.s10.offset-s1
+      center( style="margin:15% auto")
+        h4 Crear Usuario
+        img.center(src="../static/img/logo.jpg", alt="" style="border-radius:10%;" )
+      form.col.s12(method='POST' action='/signup')
+        .row
+          fieldset.col.s12.center.black-text(style='border: 1px solid #bdbdbd; border-radius: 12px; margin-bottom: 12px;')
+            legend Correo Electronico
+            input.black-text(type='email' name='email' placeholder='Correo electronico' style='border: none;margin-bottom: 20px;width: 90%;color:black' )
+          fieldset.col.s12.center.black-text(style='border: 1px solid #bdbdbd; border-radius: 12px;')
+            legend Contraseña
+            input.black-text(type='password' name='password' placeholder='Contraseña' style='border: none;margin-bottom: 20px;width: 90%;' )
+          button.btn.col.s12.pink.lighten-2(value='Ingresar' type='submit' style='border-radius: 10px; margin-top: 20px;' onclick='background-color: green')
+            i.material-icons.right login
+            | Ingresar
+      a.btn.col.s12.pink.lighten-4(href='/' style='border-radius: 10px; ')
+        i.material-icons.left chevron_left
+        | Volver

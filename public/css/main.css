@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body,.block {
+  height: 100%;
+ 
+}
+.block{
+  height: 100%;
+  
+}
+input::placeholder{
+  color: black;
+}
+
+.parrafo{
+  text-align: justify;
+  padding: 5% 0;
+  line-height: 1.9em;
+}

@@ -1,0 +1,31 @@
+extends layout/layout.pug
+block content
+  form.col.s12(method='POST' action='home')
+    h4.center.white-text FORMULARIO DE REGITRO PARA AFILIADOS
+
+    fieldset.col.s12.center.white-text(style='border: 1px solid #bdbdbd; border-radius: 12px; margin-bottom: 12px;')
+      legend Ciudad
+      input.white-text(type='text' name='ciudad' placeholder='Ciudad' style='border: none;margin-bottom: 20px;width: 90%;' id='' )
+
+    fieldset.col.s12.center.white-text(style='border: 1px solid #bdbdbd; border-radius: 12px;margin-bottom: 12px;')
+      legend Colonia
+      input.white-text(type='text' name='colonia' placeholder='Colonia' style='border: none;margin-bottom: 20px;width: 90%;' id='' )
+
+    fieldset.col.s12.center.white-text(style='border: 1px solid #bdbdbd; border-radius: 12px;margin-bottom: 12px;')
+      legend Calle
+      input.white-text(type='text' name='calle' placeholder='Calle' style='border: none;margin-bottom: 20px;width: 90%;' id='' )
+
+    fieldset.col.s12.center.white-text(style='border: 1px solid #bdbdbd; border-radius: 12px; margin-bottom: 12px;')
+      legend Numero Exterior
+      input.white-text(type='text' name='num_ext' placeholder='Num. Ext.' style='border: none;margin-bottom: 20px;width: 90%;' id='' )
+
+    fieldset.col.s12.center.white-text(style='border: 1px solid #bdbdbd; border-radius: 12px;margin-bottom: 12px;')
+      legend Numero Interior
+      input.white-text(type='text' name='num_int' placeholder='Num. Int.' style='border: none;margin-bottom: 20px;width: 90%;' id='' )
+
+    button.btn.col.s12(value='Ingresar' type='submit' style='border-radius: 10px; margin-top: 20px;background-color: #dd1917;')
+
+      |Registrarse
+    a.btn.col.s12(href="/" style='border-radius: 10px; background-color: #dd1917;margin-top: 20px;')
+
+      | Volver

@@ -1,7 +1,17 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000
 
+//Se define bosyparser para visualizar los datos
+var bodyParser = require('body-parser')
+
+
+//Confiduracion de la cuenta de firebase
+const { config } = require('./config/config')
+
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 var path = require('path')
 

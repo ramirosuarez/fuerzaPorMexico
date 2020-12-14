@@ -1,0 +1,36 @@
+extends layout/layout.pug
+block content
+
+
+  nav.pink.lighten-4(style="position: fixed !important;")
+    a.sidenav-trigger(href='#' data-target='mobile-demo')
+      img(src="../static/img/logo.ico", width="90%" alt=""  style="border-radius:10%;" )
+    a(href='#!' style="font-size: 24px;") Fuerza por México
+  ul#mobile-demo.sidenav
+    li
+      a(href='sass.html') ssssssssssssssssss
+    li
+      a(href='badges.html') Components
+    li
+      a(href='collapsible.html') Javascript
+    li
+      a(href='mobile.html') Mobile  
+  
+  .row(style="padding-top: 14%;")
+    .col.s10.offset-s1(style="width: 80%; margin-right: 10%;")
+      h5.center Fuerza por Mexico
+      p.parrafo 
+        |En el partido político Fuerza por México nos concebimos como un espacio de diálogo constructivo, de encuentro plural y deliberación razonada sobre los asuntos públicos, sus regiones, y municipios, con una visión global desde lo local.
+      p.parrafo
+        |Fuerza por México somos mujeres y hombres mexicanos de diversas condiciones sociales y visiones que coinciden en impulsar acciones a favor de causas ciudadanas y colectivas de los diferentes grupos sociales y construir un desarrollo como un derecho humano accesible a todos.
+      p.parrafo 
+        |En el que podamos participar en organizaciones políticas horizontales, flexibles y abiertas a los nuevos paradigmas sociales, con una visión ciudadanizada de la vida pública, nos hemos agrupado en el partido político Fuerza por México.
+      p.parrafo
+        |Buscamos aportar esfuerzos individuales y colectivos para que niñas, niños, jóvenes, adultos y personas de la tercera edad y con capacidades diferentes alcancen mejores niveles de vida en el marco de relaciones sociales más incluyentes, armónicas, justas e igualitarias que permitan a todas las personas ejercer el derecho a participar en el desarrollo económico, social, cultural y político.
+      p.parrafo
+        |En el partido político Fuerza por México nos concebimos como un espacio de diálogo constructivo, de encuentro plural y deliberación razonada sobre los asuntos públicos, sus regiones, y municipios, con una visión global desde lo local; así como una alternativa de formulación e impulso de políticas públicas que eleven el bienestar individual y colectivo de nuestra sociedad.
+  .row
+    .col.s10.offset-s1
+      a.btn.col.s12.pink.lighten-4(href='/logout' style='border-radius: 10px;')
+        i.material-icons.left chevron_left
+        | cerrar sesion
