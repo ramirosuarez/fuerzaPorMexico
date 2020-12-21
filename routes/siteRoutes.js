@@ -25,10 +25,7 @@ router.post('/signup', function (req, res) {
   let password = req.body.password
   
   firebase.auth().createUserWithEmailAndPassword(email, password)
-  router.get('/login', (req, res) => {
-    res.render('login', {
-    })
-  })
+  
     .then((user) => {
       // Signed in
       // ...
@@ -50,6 +47,7 @@ router.get('/login', (req, res) => {
   res.render('login', {
   })
 })
+
 router.post('/login', function (req, res) {
   console.log(req.body)
 
