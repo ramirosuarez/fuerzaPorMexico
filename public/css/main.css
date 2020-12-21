@@ -23,9 +23,41 @@ input::placeholder{
   padding: 5% 0;
   line-height: 1.9em;
 }
+.cuerpo{
+  padding-top: 14%;
+}
+
+.titulo1{
+    font-size: 20px;
+  }
+.titulo2{
+    font-size: 40px;
+  }
+
+@media (min-width: 600px) {
+  .titulo1{
+    font-size: 44px;
+    text-align: center;
+  }
+  .titulo2{
+    font-size: 44px;
+  }
+  .parrafo{
+  text-align: justify;
+  padding:1% 0;
+  line-height: 1.9em;
+  font-size: 18px;
+  }
+  .cuerpo{
+  padding-top: 5%;
+  }
+}
 
 /* td,th {
   margin: 0%;
   padding: 0;
   
 } */
+.p-0{
+  padding: 0
+}

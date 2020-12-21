@@ -1,28 +1,36 @@
 extends layout/layout.pug
 block content
 
-
-  nav.pink.lighten-4(style="position: fixed !important;")
-    
-    a.sidenav-trigger(href='#' data-target='mobile-demo')
-      img(src="../static/img/logo.ico", width="90%" alt=""  style="border-radius:10%;" )
-    p( style="font-size: 12px;") Fuerza por México
-    
+  nav
+    .nav-wrapper
+      a.center.titulo1(href='#!') FUERZA POR MEXICO
+      a.sidenav-trigger(href='#' data-target='mobile-demo')
+        i.material-icons menu
+      ul.right.hide-on-med-and-down
+        li
+          a(href='sass.html') Sass
+        li
+          a(href='badges.html') Components
+        li
+          a(href='collapsible.html') Javascript
+        li
+          a(href='mobile.html') Mobile
   ul#mobile-demo.sidenav
     li
-      a(href="login") 
-        i.material-icons login 
-        |Inicio de sesion
+      a(href='sass.html') Sass
     li
       a(href='badges.html') Components
     li
       a(href='collapsible.html') Javascript
     li
-      a(href='mobile.html') Mobile  
+      a(href='mobile.html') Mobile
   
-  .row(style="padding-top: 14%;")
-    .col.s10.offset-s1(style="width: 80%; margin-right: 10%;")
-      h5.center Fuerza por Mexico
+  .row.cuerpo()
+    //.col.s12.m8.center.offset-m2
+      img(src="../static/img/logo.jpg", alt="" style="border-radius:10%;" )
+    .col.s10.m8.offset-s1.offset-m2()
+      
+      p.center.titulo2 Fuerza por Mexico
       p.parrafo 
         |En el partido político Fuerza por México nos concebimos como un espacio de diálogo constructivo, de encuentro plural y deliberación razonada sobre los asuntos públicos, sus regiones, y municipios, con una visión global desde lo local.
       p.parrafo

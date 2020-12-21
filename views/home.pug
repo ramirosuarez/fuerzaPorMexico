@@ -1,0 +1,26 @@
+extends layout/layout.pug
+block content
+	
+	nav
+    .nav-wrapper
+      a.brand-logo.center(href='#!') FUERZA POR MEXICO
+      a.sidenav-trigger(href='#' data-target='mobile-demo')
+        i.material-icons menu
+      ul.right.hide-on-med-and-down
+        li
+          a(href='sass.html') Sass
+        li
+          a(href='badges.html') Components
+        li
+          a(href='collapsible.html') Javascript
+        li
+          a(href='mobile.html') Mobile
+  ul#mobile-demo.sidenav
+    li
+      a(href='sass.html') Sass
+    li
+      a(href='badges.html') Components
+    li
+      a(href='collapsible.html') Javascript
+    li
+      a(href='mobile.html') Mobile
