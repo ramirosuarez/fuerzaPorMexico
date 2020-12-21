@@ -1,0 +1,33 @@
+extends layout/layout.pug
+block content
+  .row
+    .col.s10.offset-s1
+      table
+        thead
+          tr
+            th Ciudad
+            th Colonia
+            th Calle
+            th Num_ext
+            th Num_int
+            th.col.s5 OPCIONES
+        tbody
+        each afiliado in afiliados
+          tr
+            td= afiliado.ciudad
+            td= afiliado.colonia
+            td= afiliado.calle
+            td= afiliado.num_ext
+            td= afiliado.num_int
+            td 
+            
+              a.waves-effect
+                i.material-icons.left cloud
+                          
+              a.waves-effect
+                i.material-icons.left cloud
+                
+
+              a.waves-effect
+                i.material-icons.left cloud
+              
