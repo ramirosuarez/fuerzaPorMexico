@@ -37,7 +37,7 @@ router.post('/signup', function (req, res) {
       // ..
     });
 
-  res.redirect('/home')
+  res.redirect('/dash')
 
 })
 

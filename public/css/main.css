@@ -53,9 +53,11 @@ input::placeholder{
   }
 
   .boton{
-    margin-left: 4% !important;
+    margin-bottom: 0;
   }
-  
+  .grupobtn{
+    margin-left:3% !important;
+  }
 }
 
 
@@ -67,3 +69,7 @@ input::placeholder{
 .p-0{
   padding: 0
 }
+
+.boton{
+    margin-bottom: 6% !important;
+  }

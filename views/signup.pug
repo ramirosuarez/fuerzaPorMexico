@@ -1,10 +1,9 @@
 extends layout/layout.pug
 block content
   
-  
-  .row.block(styl="background-color:red" )
-    .col.s10.offset-s1
-      center( style="margin:15% auto")
+  .row
+    .col.s10.offset-s1.m10.offset-m1
+      .center(style="")
         h4 Crear Usuario
         img.center(src="../static/img/logo.jpg", alt="" style="border-radius:10%;" )
       form.col.s12(method='POST' action='/signup')
@@ -15,9 +14,15 @@ block content
           fieldset.col.s12.center.black-text(style='border: 1px solid #bdbdbd; border-radius: 12px;')
             legend Contraseña
             input.black-text(type='password' name='password' placeholder='Contraseña' style='border: none;margin-bottom: 20px;width: 90%;' )
-          button.btn.col.s12.pink.lighten-2(value='Ingresar' type='submit' style='border-radius: 10px; margin-top: 20px;' onclick='background-color: green')
-            i.material-icons.right login
-            | Ingresar
-      a.btn.col.s12.pink.lighten-4(href='/' style='border-radius: 10px; ')
-        i.material-icons.left chevron_left
-        | Volver
+        .row
+          .col.m6.s12
+            button.boton.btn.pink.lighten-2.col.s12(value='Ingresar' type='submit' style='border-radius: 10px; margin-top: 20px;')
+              i.material-icons.right login
+              | Ingresar
+
+          .col.m6.s12
+            a.btn.pink.col.s12.lighten-4.boton(href='/' style='border-radius: 10px;margin-top: 20px; ')
+              i.material-icons.left chevron_left
+              | Volver
+
+        
