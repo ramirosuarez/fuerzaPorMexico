@@ -6,7 +6,6 @@ const admin = require('firebase-admin')
 const db = admin.firestore()
 const firebase = require('firebase')
 
-
 /** */
 const userServices = require('../services/userServices')
 const afiliadoService = require('../services/afiliadoServices')
