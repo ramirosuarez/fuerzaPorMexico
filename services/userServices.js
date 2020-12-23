@@ -5,8 +5,8 @@ require('firebase/auth')
 function signUp(req,res){
 	console.log(req.body)
   
-	  let email = req.body.email
-	  let password = req.body.password
+	  const email = req.body.email
+	  const password = req.body.password
 		
 	  firebase.auth().createUserWithEmailAndPassword(email, password)
 	    .then((user) => {

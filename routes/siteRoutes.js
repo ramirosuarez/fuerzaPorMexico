@@ -11,7 +11,7 @@ const userServices = require('../services/userServices')
 const afiliadoService = require('../services/afiliadoServices')
 /* */
 router.get('/', (req, res) => {
-  res.render('ladingPage', {
+  res.render('index', {
   })
 })
 
@@ -21,14 +21,9 @@ router.get('/signup', (req, res) => {
   })
 })
 
-<<<<<<< HEAD
-  res.redirect('/dash')
-
-})
-=======
 router.post('/signup', userServices.signUp)
->>>>>>> e1bdc7f145fae3857f51049e39107af983756022
 
+/*    ----------    */
 
 /**inicio de sesion- [login]  */
 router.get('/login', (req, res) => {
@@ -37,6 +32,8 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login',userServices.logIn)
+
+/*    ----------    */
 
 /** Cerrar sesion - [logout]*/
 router.get('/logout', function (req, res) {
@@ -48,24 +45,28 @@ router.get('/logout', function (req, res) {
   });
   res.redirect('/login')
 })
+/*    ----------    */
 /* formulario de Agremiado */
 router.get('/addAgremiado', (req, res) => {
   res.render('addAgremiado', {
   })
 })
 
-router.post('/addAgremiado', async (req, res) => {
-  console.log(req.body)
-  await db.collection('Afiliados').add(req.body)
-  res.redirect('/dash')
-})
+router.post('/addAgremiado',afiliadoService.add)
 
 
 router.get('/dash',afiliadoService.getAll)
 
+router.get('/view', (req,res)=>{
+  res.render('view',{
+
+  })
+})
 
 
-
+router.get('/view',(req,res)=>{
+  console.log(req.query.data)
+})
 
 module.exports = router
 
@@ -147,3 +148,9 @@ module.exports = router
     //     afiliados: data
     //   })
     // })
+/*
+router.post('/addAgremiado', async (req, res) => {
+  console.log(req.body)
+  await db.collection('Afiliados').add(req.body)
+  res.redirect('/dash')
+})*/

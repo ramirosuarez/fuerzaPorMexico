@@ -5,29 +5,27 @@ block content
       table
         thead
           tr
-            th Ciudad
-            th Colonia
-            th Calle
-            th Num_ext
-            th Num_int
-            th.col.s5 OPCIONES
+            th id
+            th Folio
+            th Nombre completo
+            th Telefono
+            th OPCIONES
         tbody
         each afiliado in afiliados
           tr
-            td= afiliado.ciudad
-            td= afiliado.colonia
-            td= afiliado.calle
-            td= afiliado.num_ext
-            td= afiliado.num_int
+            td= afiliado.id
+            td= afiliado.data.folio
+            td= afiliado.data.nombre
+            td= afiliado.data.telefono_1
             td 
             
               a.waves-effect
-                i.material-icons.left cloud
+                i.material-icons.left delete
                           
               a.waves-effect
-                i.material-icons.left cloud
+                i.material-icons.left update
                 
 
-              a.waves-effect
-                i.material-icons.left cloud
+              a(href=`/view?data=${afiliado.id}`).waves-effect
+                i.material-icons.left visibility
               

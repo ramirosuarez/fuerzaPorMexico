@@ -1,0 +1,97 @@
+extends layout/layout.pug
+block content
+	
+    ul.collection.p-0.m-0
+      li.collection-item
+        small
+         span.center Nombre:
+        p= nombre + " " + apellido_p + " " + apellido_m
+      hr
+
+      li.collection-item
+        span Servicios:
+        p= especialidad
+      hr
+      
+      li.collection-item
+        small
+          span CURP:
+        p= curp
+      hr
+
+      li.collection-item
+        small
+          span RFC:
+        p= rfc
+      hr
+
+      li.collection-item
+        small
+          span Seguro Social:
+        p= seguro_social
+      hr
+
+      li.collection-item
+        small
+          span Telefono:
+        p= telefono_1
+      hr
+
+      li.collection-item
+        small
+          span Fecha de nacimiento:
+        p= fecha_nacimiento
+      hr
+
+      li.collection-item
+        small
+          span Colonia:
+        p= colonia
+      hr
+
+      
+      li.collection-item
+        small
+          span Calle:
+        p= calle
+      hr
+
+      li.collection-item
+        small
+          span Municipio:
+        p= municipio
+      hr
+
+      li.collection-item
+        small
+          span Ciudad:
+        p= ciudad
+      hr
+
+      .col.s6(style='margin-left: -10px')
+        li.collection-item
+          small
+            span Num. Ex.:
+          p= num_ext
+        hr
+        
+      .col.s6
+        li.collection-item
+          small
+            span Num. Int.:
+          p= num_int
+        hr
+      
+      .col.s6(style='margin-left: -10px')
+        li.collection-item
+          small
+            span Estado:
+          p= estado
+        hr
+
+      .col.s6
+        li.collection-item
+          small
+            span C.P.:
+          p= cp
+        hr
