@@ -6,10 +6,13 @@ const admin = require('firebase-admin')
 const db = admin.firestore()
 const firebase = require('firebase')
 
+
+/** */
+const userServices = require('../services/userServices')
+const afiliadoService = require('../services/afiliadoServices')
 /* */
 router.get('/', (req, res) => {
   res.render('ladingPage', {
-
   })
 })
 
@@ -18,28 +21,8 @@ router.get('/signup', (req, res) => {
   res.render('signup', {
   })
 })
-router.post('/signup', function (req, res) {
-  console.log(req.body)
-  
-  let email = req.body.email
-  let password = req.body.password
-  
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-  
-    .then((user) => {
-      // Signed in
-      // ...
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log('contraseña corta')
-      // ..
-    });
 
-  res.redirect('/home')
-
-})
+router.post('/signup', userServices.signUp)
 
 
 /**inicio de sesion- [login]  */
@@ -48,22 +31,7 @@ router.get('/login', (req, res) => {
   })
 })
 
-router.post('/login', function (req, res) {
-  console.log(req.body)
-
-  let email = req.body.email
-  let password = req.body.password
-
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((user) => {
-      console.log('has iniciad');
-      res.redirect('/home')
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-    });
-})
+router.post('/login',userServices.logIn)
 
 /** Cerrar sesion - [logout]*/
 router.get('/logout', function (req, res) {
@@ -88,37 +56,31 @@ router.post('/addAgremiado', async (req, res) => {
 })
 
 
+router.get('/dash',afiliadoService.getAll)
 
-router.get('/dash', async (req, res) => {
-  const data = []
-  const afiliados = await db.collection('Afiliados').get()
-  for (const afiliado of afiliados.docs) {
-    data.push(afiliado.data())
-  }
-  res.render('dash', {
-    afiliados: data
-  })
-})
+
+
+
 
 module.exports = router
 
 
 // router.post('/home', async(req, res) => {
-//     console.log(req.body)
-//     await db.collection('prueva').add(req.body)
+  //     console.log(req.body)
+  //     await db.collection('prueva').add(req.body)
 //     res.redirect('/tabla')
 // })
 
 
 
 // router.post('/signup', async (req,res) => {
-//     console.log(req.body)
-//     await db.collection('Afiliados').add(req.body)
-//     res.redirect('/home')
+  //     console.log(req.body)
+  //     await db.collection('Afiliados').add(req.body)
+  //     res.redirect('/home')
 // })
 
 // router.post('/signup', async (req,res) => {
-//     console.log(req.body)
+  //     console.log(req.body)
 //     await db.collection('Afiliados').add(req.body)
 //     res.redirect('/home')
 // })
@@ -129,5 +91,54 @@ module.exports = router
 ///////////////////////////////
 // router.get('/home',(req,res)=>{
 //     res.render('home',{
-//     })
+  //     })
 // })
+/*router.post('/login', function (req, res) {
+  console.log(req.body)
+  
+  let email = req.body.email
+  let password = req.body.password
+  
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((user) => {
+    console.log('has iniciad');
+      res.redirect('/home')
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
+  })
+*/
+    // router.post('/signup', function (req, res) {
+    //   console.log(req.body)
+    
+    //   let email = req.body.email
+    //   let password = req.body.password
+      
+    //   firebase.auth().createUserWithEmailAndPassword(email, password)
+    
+    //     .then((user) => {
+    //       // Signed in
+    //       // ...
+    //     })
+    //     .catch((error) => {
+      //       var errorCode = error.code;
+    //       var errorMessage = error.message;
+    //       console.log('contraseña corta')
+    //       // ..
+    //     });
+    
+    //   res.redirect('/home')
+    
+    // })
+    // router.get('/dash', async (req, res) => {
+    //   const data = []
+    //   const afiliados = await db.collection('Afiliados').get()
+    //   for (const afiliado of afiliados.docs) {
+    //     data.push(afiliado.data())
+    //   }
+    //   res.render('dash', {
+    //     afiliados: data
+    //   })
+    // })

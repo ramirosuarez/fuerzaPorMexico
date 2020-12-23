@@ -1,22 +1,42 @@
 var firebase = require('firebase/app')
 require('firebase/auth')
 
+
+function signUp(req,res){
+	console.log(req.body)
+  
+	  let email = req.body.email
+	  let password = req.body.password
+		
+	  firebase.auth().createUserWithEmailAndPassword(email, password)
+	    .then((user) => {
+	      // Signed in
+	      // ...
+	    })
+	    .catch((error) => {
+	      var errorCode = error.code;
+	      var errorMessage = error.message;
+	      console.log('contraseña corta')
+	      // ..
+	    });
+	
+	  res.redirect('/')
+}
 /*Funcion para iniciar la session*/
 function logIn(req, res){
 	const email 	=	req.body.email
-	const password	=	req.bady.password
+	const password	=	req.body.password
 
-	firebase.auth().createUserWithEmailAndPassword(email, password)
-		.then((user) => {
-	    // Signed in
-	    // ...
-	  })
-	  .catch((error) => {
-	    var errorCode = error.code;
-	    var errorMessage = error.message;
-	    console.log('contraseña corta')
-	    // ..
-	  });
+	firebase.auth().signInWithEmailAndPassword(email, password)
+	.then((user) => {
+		console.log('has iniciad');
+		res.redirect('/')
+	})
+	.catch((error) => {
+		var errorCode = error.code;
+		var errorMessage = error.message;
+		res.redirect('/login')
+	});
 }
 
 /*funcion para salir de la sesion*/
@@ -55,8 +75,9 @@ function isAllReadyAuth (res,req,next){
 
 
 module.exports = {
-	iniciarSession = logIn,
-	isAuth = isAuth,
-	isAllReadyAuth = isAllReadyAuth,
-	logOut = logOut
+	signUp:signUp,
+	logIn : logIn,
+	isAuth : isAuth,
+	isAllReadyAuth : isAllReadyAuth,
+	logOut : logOut
 }
