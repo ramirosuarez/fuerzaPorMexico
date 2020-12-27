@@ -1,97 +1,99 @@
 extends layout/layout.pug
 block content
-	
-    ul.collection.p-0.m-0
-      li.collection-item
-        small
-         span.center Nombre:
-        p= nombre + " " + apellido_p + " " + apellido_m
-      hr
+  .row
+    .col.s12.m10.offset-m1
+      ul.collection.p-0.m-0
+        li.collection-item
+          small
+          span.center Nombre:
+          p= afiliado.data.nombre + " " + afiliado.data.apellido_p + " " + afiliado.data.apellido_m
+        hr
 
-      li.collection-item
-        span Servicios:
-        p= especialidad
-      hr
+        li.collection-item
+          span Servicios:
+          p= afiliado.data.especialidad
+        hr
+        
+        li.collection-item
+          small
+            span CURP:
+          p= afiliado.data.curp
+        hr
+
+        li.collection-item
+          small
+            span RFC:
+          p= afiliado.data.rfc
+        hr
+
+        li.collection-item
+          small
+            span Seguro Social:
+          p= afiliado.data.seguro_social
+        hr
+
+        li.collection-item
+          small
+            span Telefono:
+          p= afiliado.data.telefono_1
+        hr
+
+        li.collection-item
+          small
+            span Fecha de nacimiento:
+          p= afiliado.data.fecha_nacimiento
+        hr
+
+        li.collection-item
+          small
+            span Colonia:
+          p= afiliado.data.colonia
+        hr
+
+        
+        li.collection-item
+          small
+            span Calle:
+          p= afiliado.data.calle
+        hr
+
+        li.collection-item
+          small
+            span Municipio:
+          p= afiliado.data.municipio
+        hr
+
+        li.collection-item
+          small
+            span Ciudad:
+          p= afiliado.data.ciudad
+        hr
+
       
-      li.collection-item
-        small
-          span CURP:
-        p= curp
-      hr
-
-      li.collection-item
-        small
-          span RFC:
-        p= rfc
-      hr
-
-      li.collection-item
-        small
-          span Seguro Social:
-        p= seguro_social
-      hr
-
-      li.collection-item
-        small
-          span Telefono:
-        p= telefono_1
-      hr
-
-      li.collection-item
-        small
-          span Fecha de nacimiento:
-        p= fecha_nacimiento
-      hr
-
-      li.collection-item
-        small
-          span Colonia:
-        p= colonia
-      hr
-
-      
-      li.collection-item
-        small
-          span Calle:
-        p= calle
-      hr
-
-      li.collection-item
-        small
-          span Municipio:
-        p= municipio
-      hr
-
-      li.collection-item
-        small
-          span Ciudad:
-        p= ciudad
-      hr
-
-      .col.s6(style='margin-left: -10px')
         li.collection-item
           small
             span Num. Ex.:
-          p= num_ext
+          p= afiliado.data.num_ext
         hr
+          
+        .col.s6
+          li.collection-item
+            small
+              span Num. Int.:
+            p= afiliado.data.num_int
+          hr
         
-      .col.s6
-        li.collection-item
-          small
-            span Num. Int.:
-          p= num_int
-        hr
-      
-      .col.s6(style='margin-left: -10px')
-        li.collection-item
-          small
-            span Estado:
-          p= estado
-        hr
+        
+          li.collection-item
+            small
+              span Estado:
+            p= afiliado.data.estado
+          hr
 
-      .col.s6
-        li.collection-item
-          small
-            span C.P.:
-          p= cp
-        hr
+        .col.s6
+          li.collection-item
+            small
+              span C.P.:
+            p= afiliado.data.cp
+          hr
+      

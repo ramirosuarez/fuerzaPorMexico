@@ -19,13 +19,15 @@ block content
             td= afiliado.data.telefono_1
             td 
             
-              a.waves-effect
-                i.material-icons.left delete
+              a(href=`/delete/${afiliado.id}`).waves-effect
+                i.material-icons.left(style="color:black") delete
                           
               a.waves-effect
-                i.material-icons.left update
+                i.material-icons.left(style="color:black") update
                 
 
-              a(href=`/view?data=${afiliado.id}`).waves-effect
-                i.material-icons.left visibility
+              a(href=`/view/${afiliado.id}`).waves-effect
+                i.material-icons.left(style="color:black") visibility
+      a(href=`/addAgremiado`).waves-effect
+        i.material-icons.left(style="color:black") add
               

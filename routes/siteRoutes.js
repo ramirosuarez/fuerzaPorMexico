@@ -57,16 +57,18 @@ router.post('/addAgremiado',afiliadoService.add)
 
 router.get('/dash',afiliadoService.getAll)
 
-router.get('/view', (req,res)=>{
-  res.render('view',{
+router.get('/view/:id',afiliadoService.getById)
+router.get('/delete/:id',afiliadoService.delet)
 
-  })
-})
+// router.get('/view/:id', (req,res)=>{
+//   res.render('view',{
 
+//   })
+// })
 
-router.get('/view',(req,res)=>{
-  console.log(req.query.data)
-})
+// router.get('/view',(req,res)=>{
+//   console.log(req.query.data)
+// })
 
 module.exports = router
 

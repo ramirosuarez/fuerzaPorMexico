@@ -1,0 +1,24 @@
+const admin = require('firebase-admin')
+const db = admin.firestore()
+
+async function getById(req, res){
+
+    console.log(req.params.id)
+    var data = {}
+var afiliado = await db.collection('Afiliados').doc(req.params.id).get()
+  console.log("sfsfsfsfsfsfs")
+ 
+    data = {
+      id:afiliado.id,
+      data:afiliado.data() 
+    }
+    console.log("data obtenido", data)
+  res.render('dash', {
+    afiliado: data
+  })
+    res.render('view', {
+        afiliado: req.params.id
+      })
+}
+
+async function g
