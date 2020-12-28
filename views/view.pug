@@ -10,6 +10,11 @@ block content
         hr
 
         li.collection-item
+          span Folio:
+          p= afiliado.data.folio
+        hr
+
+        li.collection-item
           span Servicios:
           p= afiliado.data.especialidad
         hr
@@ -96,4 +101,7 @@ block content
               span C.P.:
             p= afiliado.data.cp
           hr
-      
+
+      a.btn.col.s12.pink.lighten-4.boton(href='/dash' style='border-radius: 10px;')
+        i.material-icons.left chevron_left 
+        | Volver

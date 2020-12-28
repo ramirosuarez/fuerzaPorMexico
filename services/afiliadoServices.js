@@ -16,20 +16,33 @@ async function getAll(req, res){
 }
 
 //Funcion para optener datos por id
-async function getById(req,res){
-  console.log(req.params.id)
-  const id = req.params.id
+async function getById(req,res,next){
+
+  console.log(req.query.id)
+  console.log(req.query.op)
+
+  const id = req.query.id
+  const op = req.query.op
   let data={}
   let afiliado = await db.collection('Afiliados').doc(id).get()
-   data = {
-     id:afiliado.id,
+  data = {
+    id:afiliado.id,
     data: afiliado.data()
    }
-   console.log('data',data)
-  res.render('view',{
-    afiliado:data
-  })
+   if(op == 1){
+     console.log('data',data)
+    res.render('view',{
+      afiliado:data
+    })
+
+   }else if(op == 2){
+       console.log('data',data)
+    res.render('edit',{
+      afiliado:data
+    })
+   }
 }
+
 
 //funcion para agregar datos a la coleccion
 async function add (req,res){
@@ -49,6 +62,24 @@ async function delet (req,res){
 });
   res.redirect('/dash')
 }
+//para obtener el id a actualizar 
+async function updateByid(){
+console.log(req.params.id)
+  const id = req.params.id
+  let data={}
+  let afiliado = await db.collection('Afiliados').doc(id).get()
+   data = {
+     id:afiliado.id,
+    data: afiliado.data()
+   }
+   console.log('data',data)
+  res.render('update',{
+    afiliado:data
+  })
+}
+
+
+
 module.exports = {
   getAll,
   getById,

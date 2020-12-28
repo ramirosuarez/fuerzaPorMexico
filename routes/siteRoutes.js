@@ -47,18 +47,20 @@ router.get('/logout', function (req, res) {
 })
 /*    ----------    */
 /* formulario de Agremiado */
-router.get('/addAgremiado', (req, res) => {
-  res.render('addAgremiado', {
+router.get('/add', (req, res) => {
+  res.render('add', {
   })
 })
 
-router.post('/addAgremiado',afiliadoService.add)
+router.post('/add',afiliadoService.add)
 
 
 router.get('/dash',afiliadoService.getAll)
 
-router.get('/view/:id',afiliadoService.getById)
+router.get('/view/',afiliadoService.getById)
 router.get('/delete/:id',afiliadoService.delet)
+router.get('/update/',afiliadoService.getById)
+
 
 // router.get('/view/:id', (req,res)=>{
 //   res.render('view',{
