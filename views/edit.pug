@@ -3,7 +3,7 @@ block content
   .row
     h4.center.black-text FORMULARIO PARA EDITAR AFILIADOS
     .col.s10.offset-s1.m10.offset-m1
-      form(method='POST' action='addAgremiado' enctype='multipart/form-data')
+      form(method='POST' action='/update' enctype='multipart/form-data')
 
         fieldset.col.s12.m6.center.black-text(style='border: 1px solid #bdbdbd; border-radius: 12px; margin-bottom: 12px;')
           legend Nombre
@@ -81,7 +81,7 @@ block content
         .row
           .col.m6.s12
             a.btn.col.s12(href="/dash" style='border-radius: 10px; background-color: #dd1917;margin-top: 20px;')
-              | Volver
+              | atras
           .col.m6.s12
             button.btn.col.s12(value='Ingresar' type='submit' style='border-radius: 10px; margin-top: 20px;background-color: #dd1917;')
-              |Registrarse
+              |Actualizar

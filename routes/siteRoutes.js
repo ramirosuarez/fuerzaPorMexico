@@ -57,11 +57,12 @@ router.post('/add',afiliadoService.add)
 
 router.get('/dash',afiliadoService.getAll)
 
-router.get('/view/',afiliadoService.getById)
+router.get('/view/:id',afiliadoService.getById)
 router.get('/delete/:id',afiliadoService.delet)
-router.get('/update/',afiliadoService.getById)
 
-
+/**/
+router.get('/update/:id',afiliadoService.updat)
+router.post('/update',afiliadoService.update)
 // router.get('/view/:id', (req,res)=>{
 //   res.render('view',{
 
