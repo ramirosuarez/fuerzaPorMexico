@@ -37,7 +37,6 @@ input::placeholder{
 @media (min-width: 600px) {
   .titulo1{
     font-size: 44px;
-    padding-left: 25%;
   }
   .titulo2{
     font-size: 44px;
