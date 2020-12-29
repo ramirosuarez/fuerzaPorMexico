@@ -3,7 +3,8 @@ block content
   .row
     h4.center.black-text FORMULARIO PARA EDITAR AFILIADOS
     .col.s10.offset-s1.m10.offset-m1
-      form(method='POST' action='/update' enctype='multipart/form-data')
+      form(method='POST' action='update')
+        input(type="hidden" name='id' value=afiliado.id )
 
         fieldset.col.s12.m6.center.black-text(style='border: 1px solid #bdbdbd; border-radius: 12px; margin-bottom: 12px;')
           legend Nombre
@@ -40,7 +41,7 @@ block content
         
         fieldset.col.s12.m4.center.black-text(style='border: 1px solid #bdbdbd; border-radius: 12px;margin-bottom: 12px;')
           legend Numero Telefonico
-          input.black-text(value=afiliado.data.telefono_1 type='number' name='telefono' placeholder='Numero Telefonico' style='border: none;margin-bottom: 20px;width: 90%;' id='' )
+          input.black-text(value=afiliado.data.telefono type='number' name='telefono' placeholder='Numero Telefonico' style='border: none;margin-bottom: 20px;width: 90%;' id='' )
         
         fieldset.col.s12.m3.offset-m1.center.black-text(style='border: 1px solid #bdbdbd; border-radius: 12px;margin-bottom: 12px;')
           legend Fecha de nacimiento

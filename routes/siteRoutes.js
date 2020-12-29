@@ -57,12 +57,19 @@ router.post('/add',afiliadoService.add)
 
 router.get('/dash',afiliadoService.getAll)
 
-router.get('/view/:id',afiliadoService.getById)
-router.get('/delete/:id',afiliadoService.delet)
+router.get('/view',afiliadoService.getById)
+router.get('/delete',afiliadoService.delet)
 
 /**/
-router.get('/update/:id',afiliadoService.updat)
-router.post('/update',afiliadoService.update)
+router.get('/actualizar',afiliadoService.getById)
+
+router.post('/update', afiliadoService.update)
+
+/*router.post('/update',(req,res)=>{
+  const afiliado = req.body
+  console.log(req.body) 
+})
+*/
 // router.get('/view/:id', (req,res)=>{
 //   res.render('view',{
 

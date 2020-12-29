@@ -1,11 +1,17 @@
-extends layout/layout.pug
+extends layout/layoutForm.pug
 block content
+
+
   .row
     .col.s10.offset-s1
+      h3 Afiliados
+      a.btn.pink.lighten-2(href=`/add`).waves-effect.right
+        i.material-icons.left(style="color:black") add
+        |añadir
       table
         thead
           tr
-            th id
+            
             th Folio
             th Nombre completo
             th Telefono
@@ -13,21 +19,20 @@ block content
         tbody
         each afiliado in afiliados
           tr
-            td= afiliado.id
+            
             td= afiliado.data.folio
-            td= afiliado.data.nombre
-            td= afiliado.data.telefono_1
+            td= afiliado.data.nombre + " " + afiliado.data.apellido_p + " " + afiliado.data.apellido_m
+            td= afiliado.data.telefono
             td 
             
-              a(href=`/delete/${afiliado.id}`).waves-effect
+              a(href=`/delete?id=${afiliado.id}`).waves-effect
                 i.material-icons.left(style="color:black") delete
                           
-              a(href=`/update/${afiliado.id}`).waves-effect
+              a(href=`/actualizar?id=${afiliado.id}&op=1`).waves-effect
                 i.material-icons.left(style="color:black") update
                 
-              a(href=`/view/${afiliado.id}`).waves-effect
+              a(href=`/view?id=${afiliado.id}&op=2`).waves-effect
                 i.material-icons.left(style="color:black") visibility
                 
-      a(href=`/add`).waves-effect
-        i.material-icons.left(style="color:black") add
+      
               
