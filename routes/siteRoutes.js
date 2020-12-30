@@ -26,7 +26,7 @@ router.post('/signup', userServices.signUp)
 /*    ----------    */
 
 /**inicio de sesion- [login]  */
-router.get('/login', (req, res) => {
+router.get('/login',userServices.isAllReadyAuth,(req, res) => {
   res.render('login', {
   })
 })
@@ -36,6 +36,8 @@ router.post('/login',userServices.logIn)
 /*    ----------    */
 
 /** Cerrar sesion - [logout]*/
+router.get('/logout',userServices.logOut)
+/*
 router.get('/logout', function (req, res) {
   firebase.auth().signOut().then(function () {
     // Sign-out successful.
@@ -44,10 +46,10 @@ router.get('/logout', function (req, res) {
     // An error happened.
   });
   res.redirect('/login')
-})
+})*/
 /*    ----------    */
 /* formulario de Agremiado */
-router.get('/add', (req, res) => {
+router.get('/add',userServices.isAuth, (req, res) => {
   res.render('add', {
   })
 })
@@ -55,13 +57,13 @@ router.get('/add', (req, res) => {
 router.post('/add',afiliadoService.add)
 
 
-router.get('/dash',afiliadoService.getAll)
+router.get('/dash',userServices.isAuth,afiliadoService.getAll)
 
-router.get('/view',afiliadoService.getById)
-router.get('/delete',afiliadoService.delet)
+router.get('/view',userServices.isAuth,afiliadoService.getById)
+router.get('/delete',userServices.isAuth,afiliadoService.delet)
 
 /**/
-router.get('/actualizar',afiliadoService.getById)
+router.get('/actualizar',userServices.isAuth,afiliadoService.getById)
 
 router.post('/update', afiliadoService.update)
 

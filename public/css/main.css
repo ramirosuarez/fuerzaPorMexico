@@ -24,19 +24,19 @@ input::placeholder{
   line-height: 1.9em;
 }
 .cuerpo{
-  padding-top: 14%;
+  padding-top: 5%;
 }
 
-.titulo1{
-    font-size: 20px;
-  }
+
+
 .titulo2{
     font-size: 40px;
   }
 
-@media (min-width: 600px) {
+@media (min-width:992px) {
   .titulo1{
     font-size: 44px;
+    padding-left: 25%;
   }
   .titulo2{
     font-size: 44px;
@@ -56,6 +56,10 @@ input::placeholder{
   }
   .grupobtn{
     margin-left:3% !important;
+  }
+
+  nav .brand-logo {
+    left: 26%;
   }
 }
 

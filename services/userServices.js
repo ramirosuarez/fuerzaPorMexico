@@ -30,7 +30,7 @@ function logIn(req, res){
 	firebase.auth().signInWithEmailAndPassword(email, password)
 	.then((user) => {
 		console.log('has iniciad');
-		res.redirect('/')
+		res.redirect('/dash')
 	})
 	.catch((error) => {
 		var errorCode = error.code;
@@ -42,8 +42,8 @@ function logIn(req, res){
 /*funcion para salir de la sesion*/
 function logOut(req,res){
 	firebase.auth().signOut().then(() => {
-    // Sign-out successful.
-    //console.log('cerraste session')
+     //Sign-out successful.
+    console.log('cerraste session')
     res.redirect('/')
   }).catch(function (error) {
     // An error happened.
@@ -62,12 +62,12 @@ function isAuth(req, res,next){
 		res.redirect('/')
 	}
 }
-
-function isAllReadyAuth (res,req,next){
+//Comprueva si se inicio seccion, 
+function isAllReadyAuth (req,res,next){
 	const user = firebase.auth().currentUser
 	if(user != null){
 		req.user = user
-		res.redirect('/admin')
+		res.redirect('/dash')
 	}else{
 		next()
 	}
